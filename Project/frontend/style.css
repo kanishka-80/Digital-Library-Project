@@ -41,7 +41,7 @@ nav a:hover{
 /* Hero */
 
 .hero{
-    height:90vh;
+    height:70vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -75,13 +75,27 @@ nav a:hover{
 }
 
 .features{
-    display:flex;
+    padding:60px 20px;
+    text-align:center;
+    background: #f8fafc;
+}
+
+.features h2{
+    font-size:40px;
+    color:#16325B;
+    margin-bottom:40px;
+}
+
+.feature-container{
+    display:grid;
+    grid-template-columns:repeat(3,300px);
+    
     justify-content:center;
     gap:30px;
-    padding:60px;
 }
 
 .card{
+
     width:250px;
     padding:20px;
     background:white;
@@ -95,9 +109,25 @@ nav a:hover{
     transform: translateY(-10px);
 }
 
+.card h3{
+    color: #2563eb;
+}
+
+.featured-books{
+    padding:60px 20px;
+    text-align:center;
+    background: #f8fafc;
+}
+
+.featured-books h2{
+    font-size:40px;
+    color:#16325B;
+    margin-bottom:40px;
+}
 .book-container{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap:25px;
    
 }
@@ -121,6 +151,7 @@ nav a:hover{
 .book-card h3{
     font-size:22px;
     margin-bottom:15px;
+    color: #2563eb;
 }
 
 
@@ -160,11 +191,7 @@ nav a:hover{
     transition:0.3s;
 }
 
-
-.featured-section{
-    padding: 40px;
-}
-
+/* 
 .section-header{
     text-align: center;
     margin-bottom: 25px;
@@ -179,12 +206,16 @@ nav a:hover{
 .section-header p{
     color: #666;
     font-size: 16px;
+} */
+
+.search-section{
+    padding: 10px;
+    background: #f8fafc;
 }
-
-
 .search-box{
     display: flex;
-    justify-content: center;
+    padding: 10px;
+    /* justify-content: center; */
     gap: 10px;
     margin-bottom: 35px;
 }
@@ -280,32 +311,88 @@ nav a:hover{
     line-height: 1.5;
 }
 
+/* Statistics Section */
+
+.statistics{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    background: #2563eb;
+}
+
+
+/* Individual stat box */
+
+.stat-box{
+    width: 220px;
+    padding: 30px 20px;
+
+    background: white;
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+
+/* Hover effect */
+
+.stat-box:hover{
+    transform: translateY(-10px);
+}
+
+
+/* Numbers */
+
+.stat-box h2{
+    font-size: 36px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+
+/* Text */
+
+.stat-box p{
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+}
+
 /* Advanced Features Section */
 
-.features{
+.advanced-features{
+    text-align: center;
     padding: 50px;
 }
 
 
-.features h2{
+.advanced-features h2{
     text-align:center;
     font-size:32px;
-    color:#1f2937;
+    color:#243e62;
     margin-bottom:35px;
 }
 
 
-.feature-container{
-    display:flex;
+
+.feature-contain{
+    display: grid;
+    grid-template-columns:repeat(3,250px);
     justify-content:center;
     gap:25px;
-    flex-wrap:wrap;
 }
 
 
-.card{
-    width:250px;
-    padding:30px;
+.feature-box{
+    width:300px;
+    padding: 40px;
     background:white;
     border-radius:18px;
     text-align:center;
@@ -314,25 +401,25 @@ nav a:hover{
 }
 
 
-.card:hover{
+.feature-box:hover{
     transform:translateY(-10px);
 }
 
 
-.card h3{
+.feature-box h3{
     font-size:22px;
     color:#2563eb;
     margin-bottom:15px;
 }
 
 
-.card p{
+.feature-box p{
     color:#555;
     line-height:1.5;
 }
 
 
-.card button{
+.feature-box button{
     margin-top:20px;
     padding:10px 22px;
     border:none;
@@ -345,6 +432,76 @@ nav a:hover{
 }
 
 
-.card button:hover{
-    background:#1d4ed8;
+/* Footer */
+
+footer{
+    background: #111827;
+    color: white;
+    padding: 50px 40px;
+}
+
+
+/* Footer content */
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Footer columns */
+
+.footer-content div{
+    width: 220px;
+}
+
+
+/* Heading */
+
+.footer-content h3{
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #60a5fa;
+}
+
+
+/* Paragraph */
+
+.footer-content p{
+    color: #d1d5db;
+    font-size: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Hover effect */
+
+.footer-content p:hover{
+    color: white;
+    transform: translateX(5px);
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-content div{
+        width:100%;
+    }
+
 }

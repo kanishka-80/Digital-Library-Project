@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital library Management System</title>
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css">   
+    
 </head>
 <body>
      <nav>
@@ -27,14 +28,15 @@
 
         <button>Explore Books</button><br>
 
-        <button>Register Now</button>
+        <button id="registerBtn">Register Now</button>
     </section>
 
     <section class="search-section">
-        <h2>Search Books</h2>
+        <!-- <h2>Search Books</h2> -->
         <div class="search-box">
-           <input type="text" placeholder="Search by title, author or category">
-            <button id="Search-btn">Search</button>
+           <input type="text" id="searchBook"  placeholder="Search Books by title, author or category">
+           <button onclick="searchBooks()">Search</button>
+
         </div>
     </section>
 
@@ -44,63 +46,62 @@
        <div class="feature-container">
 
         <div class="card">
-            <h3>Book Catalog</h3>
+            <h3>📚 Book Catalog</h3>
             <p>Search and manage books.</p>
-       </div><br>
-
+       </div>
         <div class="card">
-            <h3>Member Portal</h3>
+            <h3>👤 Member Portal</h3>
             <p>Track borrowing history.</p>
-       </div><br>
+       </div>
 
        <div class="card">
-           <h3>Issue & Return</h3>
+           <h3>🔄 Issue & Return</h3>
            <p>Issue, return and reserve books easily.</p>
-       </div><br>
+       </div>
 
        <div class="card">
-           <h3> E-books</h3>
+           <h3>📖 E-books</h3>
            <p>Read and download digital books online</p>
-       </div><br>
+       </div>
 
        <div class="card">
-           <h3>QR Code</h3>
+           <h3>📱 QR Code</h3>
            <p>Quick Checkout using QR code scanning</p>
-       </div><br>
+       </div>
 
        <div class="card">
-           <h3>Analytics</h3>
+           <h3>📊 Analytics</h3>
            <p>View reports of books, members amd liberary activity</p>
-       </div><br>
+       </div>
     </div>
     
 </section>
 
 <section class="featured-books">
 
-    <h2>Featured Books</h2>
-
+<h2>Featured Books</h2>
+    
     <div class="book-container">
 
         <div class="book-card">
             <h3> Java Programming</h3>
             <p>Author: James Gosling</p>
             <p class="available">Available</p>
-            <button>Borrow</button>
+            <button onclick="borrowBook(this)">Borrow</button>
         </div>
 
         <div class="book-card">
             <h3>Python</h3>
             <p>Author: Guido van Rossom</p>
             <p class="issued">Issued</p>
-            <button>Borrow</button>
+            <button onclick="borrowBook(this)">Borrow</button>
         </div>
 
         <div class="book-card">
             <h3>React</h3>
             <p>Author: Jordon Walke</p>
             <p class="available">Available</p>
-            <button>Borrow</button>
+           <button onclick="borrowBook(this)">Borrow</button>
 
         </div>
 
@@ -108,7 +109,7 @@
             <h3>Database</h3>
             <p>Author: C.J. Date</p>
             <p class="available">Available</p>
-            <button>Borrow</button>
+            <button onclick="borrowBook(this)">Borrow</button>
 
         </div>
 
@@ -119,32 +120,32 @@
 
     <h2>Categories</h2>
     <div class="cat-con">
-       <div class="book-cat">
+       <div class="book-cat" onclick="filterCategory('AI')">
           <h3>AI</h3>
           <p>Explore AI Books</p>
        </div><br>
 
-       <div class="book-cat">
+      <div class="book-cat" onclick="filterCategory('Programming')">
           <h3>Programming</h3>
           <p>Explore programming books</p>
        </div><br>
 
-       <div class="book-cat">
+       <div class="book-cat" onclick="filterCategory('Novels')">
           <h3>Novels</h3>
           <p>Find your all favourite novels here</p>
        </div><br>
 
-       <div class="book-cat">
+       <div class="book-cat" onclick="filterCategory('Science')">
           <h3>Science</h3>
           <p>Explore science world</p>
        </div><br>
 
-       <div class="book-cat">
+       <div class="book-cat" onclick="filterCategory('History')">
           <h3>History</h3>
           <p>Find your history  here</p>
        </div><br>
 
-       <div class="book-cat">
+       <div class="book-cat" onclick="filterCategory('Machine learning')">
           <h3>Machine Learning</h3>
           <p>Explore Machine learning</p>
        </div><br>
@@ -180,6 +181,7 @@
 <section class="advanced-features">
 
     <h2>Advanced Features</h2>
+    <div class="feature-contain">
 
     <div class="feature-box">
 
@@ -187,7 +189,7 @@
 
         <p> Scan books quickly and access library details easily. </p>
 
-    </div>
+    </div><br>
 
     <div class="feature-box">
 
@@ -195,7 +197,7 @@
 
         <p> Read Online </p>
 
-    </div>
+    </div><br>
 
     <div class="feature-box">
 
@@ -203,7 +205,7 @@
 
         <p>Get a Book suggestion </p>
 
-    </div>
+    </div><br>
 
     <div class="feature-box">
 
@@ -211,7 +213,7 @@
 
         <p> Track Liberary Data</p>
 
-    </div>
+    </div><br>
 
     <div class="feature-box">
 
@@ -219,13 +221,14 @@
 
         <p>Online Fine payment </p>
 
-    </div>
+    </div><br>
     <div class="feature-box">
 
         <h3>🔔 Notifications</h3>
 
         <p>Book Reminders </p>
 
+    </div><br>
     </div>
 
 </section>
@@ -265,5 +268,6 @@
     </div>
 
 </footer>
+<script src="script.js"></script> 
 </body>
 </html>
